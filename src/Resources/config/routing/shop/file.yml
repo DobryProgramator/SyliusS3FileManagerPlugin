@@ -1,0 +1,5 @@
+dobryprogramator_sylius_s3_file_manager_plugin_shop_file_download:
+    path: /ke-stazeni/{code}
+    methods: [GET]
+    defaults:
+        _controller: dobryprogramator_sylius_s3_file_manager_plugin.controller.file:downloadFileAction

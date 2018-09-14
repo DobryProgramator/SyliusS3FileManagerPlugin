@@ -1,0 +1,44 @@
+sylius_grid:
+    grids:
+        dobryprogramator_sylius_s3_file_manager_plugin_admin_file:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: '%dobryprogramator_sylius_s3_file_manager_plugin.model.file.class%'
+                    repository:
+                        method: createListQueryBuilder
+            sorting:
+                code: asc
+            limits: [10, 25, 50]
+            fields:
+                code:
+                    type: string
+                    label: dobryprogramator_sylius_s3_file_manager_plugin.ui.fields.code
+                    sortable: ~
+                filename:
+                    type: string
+                    label: dobryprogramator_sylius_s3_file_manager_plugin.ui.fields.filename
+                    sortable: filename
+                link:
+                    type: twig
+                    label: dobryprogramator_sylius_s3_file_manager_plugin.ui.fields.link
+                    path: .
+                    sortable: false
+                    options:
+                        template: DobryProgramatorS3FileManagerPlugin:Grid/Field:_link.html.twig
+            filters:
+                search:
+                    type: string
+                    label: sylius.ui.search
+                    options:
+                        fields: [code, filename]
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    delete:
+                        type: delete
+                bulk:
+                    delete:
+                        type: delete

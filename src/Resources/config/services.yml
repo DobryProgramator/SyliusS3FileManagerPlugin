@@ -1,0 +1,21 @@
+imports:
+    - { resource: services/event_listener.yml }
+    - { resource: services/form.yml }
+
+services:
+    ct_file_store.s3:
+        class: Aws\S3\S3Client
+        factory: [Aws\S3\S3Client, 'factory']
+        arguments:
+        -   version: '%env(AWS_VERSION)%'
+            region: '%env(AWS_REGION)%'
+            credentials:
+                key: '%env(AWS_KEY)%'
+                secret: '%env(AWS_SECRET)%'
+
+    dobryprogramator_sylius_s3_file_manager_plugin.s3_client:
+        class: DobryProgramator\SyliusS3FileManagerPlugin\Service\S3Client
+        arguments:
+            - '@ct_file_store.s3'
+            - '%env(AWS_BUCKET)%'
+        public: true

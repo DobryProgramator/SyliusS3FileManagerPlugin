@@ -1,0 +1,16 @@
+dobryprogramator_sylius_s3_file_manager_plugin_admin_file:
+    resource: |
+        alias: dobryprogramator_sylius_s3_file_manager_plugin.file
+        section: admin
+        templates: DobryProgramatorS3FileManagerPlugin:Crud
+        except: ['update']
+        redirect: index
+        grid: dobryprogramator_sylius_s3_file_manager_plugin_admin_file
+        permission: true
+        vars:
+            all:
+                header: dobryprogramator_sylius_s3_file_manager_plugin.ui.pages.files.header
+                subheader: dobryprogramator_sylius_s3_file_manager_plugin.ui.pages.files.subheader
+            index:
+                icon: sticky file
+    type: sylius.resource

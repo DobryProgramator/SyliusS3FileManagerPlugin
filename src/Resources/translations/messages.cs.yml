@@ -1,0 +1,18 @@
+dobryprogramator_sylius_s3_file_manager_plugin:
+    ui:
+        files: 'Soubory'
+        pages:
+            files:
+                header: 'Soubory'
+                subheader: 'Seznam vašich souborů'
+        fields:
+            code: 'Kód'
+            filename: 'Název souboru'
+            link: 'Odkaz'
+        menu:
+            title: 'Soubory'
+            add_file: 'Nahrát soubor'
+            list_files: 'Zobrazit soubory'
+        form:
+            code: 'Kód'
+            file: 'Soubor'

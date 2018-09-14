@@ -1,0 +1,18 @@
+dobryprogramator_sylius_s3_file_manager_plugin:
+    ui:
+        files: 'Files'
+        pages:
+            files:
+                header: 'Files'
+                subheader: 'List of your files'
+        fields:
+            code: 'Code'
+            filename: 'File name'
+            link: 'Link'
+        menu:
+            title: 'Files'
+            add_file: 'Upload file'
+            list_files: 'List files'
+        form:
+            code: 'Code'
+            file: 'File'

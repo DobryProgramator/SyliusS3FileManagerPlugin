@@ -1,0 +1,7 @@
+dobryprogramator_sylius_s3_file_manager_plugin_admin:
+    resource: "@DobryProgramatorS3FileManagerPlugin/Resources/config/routing/admin.yml"
+    prefix: /admin
+
+dobryprogramator_sylius_s3_file_manager_plugin_shop:
+    resource: "@DobryProgramatorS3FileManagerPlugin/Resources/config/routing/shop.yml"
+    prefix: /{_locale}

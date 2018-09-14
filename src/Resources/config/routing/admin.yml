@@ -1,0 +1,2 @@
+dobryprogramator_sylius_s3_file_manager_plugin_admin_file:
+    resource: "@DobryProgramatorS3FileManagerPlugin/Resources/config/routing/admin/file.yml"

@@ -1,0 +1,2 @@
+imports:
+    - { resource: "@DobryProgramatorS3FileManagerPlugin/Resources/config/grids/admin/file.yml" }

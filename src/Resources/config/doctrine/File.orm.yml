@@ -1,0 +1,20 @@
+DobryProgramator\SyliusS3FileManagerPlugin\Entity\File:
+    type: mappedSuperclass
+    table: dobryprogramator_s3_file_manager_file
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        code:
+            column: code
+            type: string
+            length: 250
+            unique: true
+        filename:
+            column: filename
+            type: string
+            length: 250
+            unique: true

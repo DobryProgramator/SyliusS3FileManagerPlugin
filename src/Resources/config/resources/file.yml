@@ -1,0 +1,10 @@
+sylius_resource:
+    resources:
+        dobryprogramator_sylius_s3_file_manager_plugin.file:
+            driver: doctrine/orm
+            classes:
+                model: DobryProgramator\SyliusS3FileManagerPlugin\Entity\File
+                interface: DobryProgramator\SyliusS3FileManagerPlugin\Entity\FileInterface
+                repository: DobryProgramator\SyliusS3FileManagerPlugin\Repository\FileRepository
+                form: DobryProgramator\SyliusS3FileManagerPlugin\Form\Type\FileType
+                controller: DobryProgramator\SyliusS3FileManagerPlugin\Controller\FileController

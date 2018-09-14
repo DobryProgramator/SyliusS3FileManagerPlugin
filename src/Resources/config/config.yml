@@ -1,0 +1,30 @@
+imports:
+    - { resource: "@DobryProgramatorS3FileManagerPlugin/Resources/config/resources.yml" }
+    - { resource: "@DobryProgramatorS3FileManagerPlugin/Resources/config/grids.yml" }
+    - { resource: "@DobryProgramatorS3FileManagerPlugin/Resources/config/services.yml" }
+
+knp_gaufrette:
+    stream_wrapper: ~
+    adapters:
+        files_adapter:
+            aws_s3:
+                service_id: ct_file_store.s3
+                bucket_name: '%env(AWS_BUCKET)%'
+                detect_content_type: true
+                options:
+                    create: true
+                    directory: files
+    filesystems:
+        files_fs:
+            adapter: files_adapter
+
+vich_uploader:
+    db_driver: orm
+    storage: gaufrette
+    mappings:
+        file:
+            inject_on_load: true
+            uri_prefix: "%env(AWS_BASE_URL)%/%env(AWS_BUCKET)%/files"
+            upload_destination: files_fs
+            delete_on_update: false
+            delete_on_remove: false

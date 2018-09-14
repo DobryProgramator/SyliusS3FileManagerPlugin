@@ -1,0 +1,8 @@
+services:
+    dobryprogramator_sylius_s3_file_manager_plugin.form.type.file:
+        class: DobryProgramator\SyliusS3FileManagerPlugin\Form\Type\FileType
+        arguments:
+            - "%dobryprogramator_sylius_s3_file_manager_plugin.model.file.class%"
+            - ['dobryprogramator']
+        tags:
+            - { name: form.type }

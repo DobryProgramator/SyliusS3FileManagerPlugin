@@ -1,0 +1,13 @@
+services:
+    dobryprogramator_sylius_s3_file_manager_plugin.menu.media:
+        class: DobryProgramator\SyliusS3FileManagerPlugin\Menu\FilesMenuBuilder
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }
+
+    dobryprogramator_sylius_s3_file_manager_plugin.event_listener.file_delete:
+        class: DobryProgramator\SyliusS3FileManagerPlugin\EventListener\FileDeleteListener
+        arguments:
+            - '@ct_file_store.s3'
+            - '%env(AWS_BUCKET)%'
+        tags:
+            - { name: kernel.event_listener, event: dobryprogramator_sylius_s3_file_manager_plugin.file.pre_delete, method: deleteFromBucket }
